@@ -31,17 +31,22 @@ To elaborate, the training data contain 891 passengers.
 3. Pclass is the ticket class of the passenger, in which “1”, “2” and “3” stand for first-class, second-class and third-class ticket respectively.
 
 Interestingly, these labels also refer to socio-economic status (SES) whereas first-class ticket is a proxy for the upper-class. Second-class refers to the middle-class and Third-class ticket represents the lower-class. From historical perspective, this connection shows us that accessibility to Titanic is a direct indicator of wealth during 1912.
-  
-4.Sex indicates biological gender of the passenger, “male” and “female”.
 
-5.Age is of the number of years of each passenger age. The age with nearest hundredth decimal represents the month in age. For instance, 0.42 is an approximation of 5 month old passenger (0.416666.. year). 
+4.Name of the passenger is listed as string.
 
-5.Sibsp is a number of siblings and spouses, of that passenger, boarding the Titanic. In other word, the siblings and spouses are not counted if they are not on the Titanic ship. "Sibling" includes both biological brother/sister and stepbrother/stepsister. However, "Spouse" defines narrowly husband and wife relationship, excluding mistress and financé. 
+5.Sex indicates biological gender of the passenger, “male” and “female”.
 
-5.Parch is a number of parent and child 
-Ticket The ticket number of the passenger
-Cabin The cabin number of the passenger on the Titanic
-Embarked The port that the passenger embark on the Titanic
+6.Age is of the number of years of each passenger age. The age with nearest hundredth decimal represents the month in age. For instance, 0.42 is an approximation of 5 month old passenger (0.416666.. year). 
+
+7.Sibsp is a number of siblings and spouses, of that passenger, boarding the Titanic. In other word, the siblings and spouses are not counted if they are not on the Titanic ship. "Sibling" includes both biological brother/sister and stepbrother/stepsister. However, "Spouse" defines narrowly husband and wife relationship, excluding mistress and financé. 
+
+8.Parch is a number of parent and child 
+
+9.Fare is the price of the ticket in British pound that passenger purchase. Note that some passenger fare is 0.00  
+
+10.Ticket The ticket number of the passenger
+11.Cabin The cabin number of the passenger on the Titanic
+12.Embarked The port that the passenger embark on the Titanic
 
 ## Quantitative Attribute
 Mean and S.D.
