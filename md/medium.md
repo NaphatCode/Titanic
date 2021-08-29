@@ -7,7 +7,7 @@ Disclaimer : This EDA is written as a "study note" upon assumption that the read
 
 ## Titanic Dataset Overview
 
-In this first section we will discuss basic information of the dataset, especially the meaning of each variable. . Otherwise, we could “sail” nowhere without a proper introduction to our 12 variables, listed in the following table :
+In this first section we will discuss basic information of the dataset, especially the meaning of each variable. Otherwise, we could “sail” nowhere without a proper introduction to our 12 variables, listed in the following table :
 
 | Variable Name |        Meaning        |                 Possible Value                 |
 |:-------------:|:---------------------:|:----------------------------------------------:|
@@ -56,16 +56,17 @@ Now that we could recognize our variable, let's make a firm handshake with them.
 We start by importing our training data, and then kindly ask Rstudio to summarize the data with command "summary()" 
 
 df.raw = read.csv("~/development/Titanic/data/train.csv")
-summary(df.raw)Mean and S.D.
+summary(df.raw)
 
-At this point our 891 roww, 12 columns of Titanic training data is "stored" as object in global environment. As the original file comes with file extension ".csv", our object is stored as a dataframe. Dataframe can be practically considered as a table format for R.
+Mean and S.D.
 
+At this point our 891 rows, 12 columns of Titanic training data is "stored" as object in global environment. As the original file comes with file extension ".csv", our object is stored as a dataframe. Dataframe can be practically considered as a table format for R.
 
 I named this dataframe as df.raw, which later on we will call this object by this name in other commands. 
 
 "summary" will display some useful statistical value of each column as shown below 
 
-
+![summary](~cd/Development/Titanic/image/summary.png)
 
 We can reaffirm the dimension (the size) of our dataframe by
 following command
