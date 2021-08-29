@@ -176,7 +176,9 @@ Three observation can be remarked
 
 1.**Age** mean is 29.70 years with S.D. = 14.53. This means that the average age of 891 passenger fall within young adulthood range. Age is the second most spread out quantitative variables. This finding associates with the context of data. RMS Titanic's maiden vayage had two responsibilities. First priority is transport passenger back and forth. The second is to carry mail and substantial cargo from Europe to North America. Therefore, the ship carried both the wealth and the immigrant from Great Britain, Ireland and Scandinavia. The immigrants starting new life at new continental should be among young adulthood range. 
 
-2.The average of **SibSp** and **Parch** are 0.52 and 0.38 respectively. It is obvious that number of people could not be a decimal. However, by specifying these two variable as continuous to calculate the mean, it is evident that the passenger rarely brought their relatives together with them. The low S.D. for SibSp and Parch, 1.10 and 0.81 respectively, supports this observation. The reason that SibSp has a slightly higher average and S.D., estimated as 1 by default setting, resonate with the  
+2.The average of **SibSp** and **Parch** are 0.52 and 0.38 respectively. It is obvious that number of people could not be a decimal. However, by specifying these two variable as continuous to calculate the mean, it is evident that the passenger rarely brought their relatives together with them. The low S.D. for SibSp and Parch, 1.10 and 0.81 respectively, supports this observation. The reason that SibSp has a slightly higher average and S.D., estimated as 1 by default setting, resonate with the reasoning that a couple would aboard the ship together.
+
+3.**digits** displays 32.20 British pounds for average with highest S.D. among four quantitative variables
 
 
 ## Qualitative
