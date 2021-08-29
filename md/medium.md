@@ -69,6 +69,8 @@ length(df.row)
 
 The output will look like this 
 
+![dimension]()
+
 ## Quantitative Attribute
 Now that we could recognize our variable, let's make a firm handshake with them. 
 
@@ -93,8 +95,10 @@ I named this dataframe as df.raw, which later on we will call this object by thi
 </p>
 
 These summary is useful but not in the most organized format for presentation. 
-tbl_summary(df.raw) command from **library gtsummary** 
-can summarize the result in a beautiful grid.
+Therefore let's use similar command to generate statistical value instead
+
+tbl_summary() is a command from **library gtsummary** 
+that can summarize the result in a beautiful grid.
 
 We need to install package by this command in the console first.
 
@@ -113,7 +117,10 @@ head(df.raw)
 
 ```
 
-This output is a quick display in case we need to peek back into our dataframe.
+This output belowed is a quick display in case we need to peek back into our dataframe.
+
+![head()]()
+
 From this output, together with the overview of each variable definition, only some variables are **quantitative**.
 In other word, they are numbers that can be calculate statistically without losing real-world meaning.
 
@@ -123,10 +130,17 @@ The four quantitative variables in Titanic dataset are
   - **Parch**
   - **Fare**
 
-Let's extract these four columns/variables from df.raw 
+Let's extract these four columns/variables from df.raw into new dataframe named "df.quan".
 
 ```
 df.quan <- df.raw %>% select(Age,SibSp,Parch,Fare)
+
+```
+
+This separation allow us handle the parameters in tbl_summary() easier.
+To generate summary table, run these following command lines. 
+
+```
 df.quan %>% 
   tbl_summary(
     type = list(SibSp ~ 'continuous',Parch ~ 'continuous'),
@@ -134,9 +148,39 @@ df.quan %>%
     digits = list(all_continuous()~c(2,2))
   )
 ```
+The output from tbl_summary() is customizable by these parameters 
+
+> type= list(SibSp~'continuous',Parch~'continuous')
+
+**type** tells R that we consider SibSp and Parch as continuous variable.
+tbl_summary() recognizes these two variable as qualitative/discrete variable by default.
+In fact, we will discuss this point very soon
+
+>statistic = list(all_continuous()~"{mean} ({sd})"),
+
+**statistic** specifies the statistical value that we want R to compute.
+**all_continuous()** refers to all continuous variable in dataframe df.quan,
+which R will compute for **Mean** and **Standard deviation** as specified with **{mean} ({sd})**. 
+
+>digits = list(all_continuous()~c(2,2))
+
+**digits** tells R how many decimal places are expected for each statistical value. 
+If this paramter is omitted, the default setting of tbl_summary() will estimated the calculation to integer.
+This lead to Parch's mean = 0 in an initial try.
+
+All these customization result this table output
+
+![quan plot()]() 
+
+Three observation can be remarked 
+
+1.**Age** mean is 29.70 years with S.D. = 14.53. This means that the average age of 891 passenger fall within young adulthood range. Age is the second most spread out quantitative variables. This finding associates with the context of data. RMS Titanic's maiden vayage had two responsibilities. First priority is transport passenger back and forth. The second is to carry mail and substantial cargo from Europe to North America. Therefore, the ship carried both the wealth and the immigrant from Great Britain, Ireland and Scandinavia. The immigrants starting new life at new continental should be among young adulthood range. 
+
+2.The average of **SibSp** and **Parch** are 0.52 and 0.38 respectively. It is obvious that number of people could not be a decimal. However, by specifying these two variable as continuous to calculate the mean, it is evident that the passenger rarely brought their relatives together with them. The low S.D. for SibSp and Parch, 1.10 and 0.81 respectively, supports this observation. The reason that SibSp has a slightly higher average and S.D., estimated as 1 by default setting, resonate with the  
+
 
 ## Qualitative
-##Skew 
+## Skew 
 
 
 
