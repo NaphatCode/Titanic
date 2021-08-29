@@ -1,4 +1,3 @@
-
 #The fall of the unsinkable ship : Titanic EDA
 
 ##By Naphat Sanguansakpakdee
@@ -27,7 +26,7 @@ In this first section we will discuss basic information of the dataset, especial
 | cabin         | Cabin number          | String                                         |
 | embarked      | Embarkation Port      | C = Cherbourg, Q = Queenstown, S = Southampton |
 
-**table 1 : variable definition**
+
 
   
 To elaborate, the training data contains 891 passengers. 
