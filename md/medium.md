@@ -180,6 +180,23 @@ Three observation can be remarked
 
 3.**Fare** displays 32.20 British pounds for average with highest S.D. among four quantitative variables (49.69). This finding associates the rigid separation of ticket classes, that cause the fare ticket to fluctuate among 891 passengers.
 
+Another useful figure that can visualize quantitative data is a box plot. Recall that summary() could display min, max, Q1, Q2 and Q3 as well, but not in graphical presentation.
+
+The command lines for boxplot is 
+
+```
+
+boxplot(df.quan,
+        main = "Box Plot of Quantitative Variables ",
+        col = "orange", #color of the plot 
+        border = "brown", #border color
+        horizontal = TRUE, #direction of the plot
+        notch = TRUE
+)
+
+```
+From box plot 
+
 
 
 
