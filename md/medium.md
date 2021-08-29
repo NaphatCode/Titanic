@@ -24,7 +24,8 @@ In this first section we will discuss basic information of the dataset, especial
 | ticket        | Ticket number         | String                                         |
 | cabin         | Cabin number          | String                                         |
 | embarked      | Embarkation Port      | C = Cherbourg, Q = Queenstown, S = Southampton |
-**table 1 : variable definition**
+
+*table 1 : variable definition*
 
   
 To elaborate, the training data contains 891 passengers. 
@@ -75,10 +76,9 @@ I named this dataframe as df.raw, which later on we will call this object by thi
 
 <p align="center">
 <img width="400" alt="summary"  src="https://user-images.githubusercontent.com/65748521/131241040-9d0219e0-e509-4e9b-a309-c4993a5e2e39.png">
- 
-figure 1 : output screenshot of summary(df.raw)
+ <em>image_caption</em> 
 </p>
-
+ 
 We can reaffirm the dimension (the size) of our dataframe by
 following command
 
