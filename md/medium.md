@@ -69,7 +69,7 @@ length(df.row)
 
 The output will look like this 
 
-![dimension]()
+![dimension](<img width="309" alt="dimension" src="https://user-images.githubusercontent.com/65748521/131267094-2e0cb824-b895-4dd8-a51c-f4c403d766e8.png">)
 
 ## Quantitative Attribute
 Now that we could recognize our variable, let's make a firm handshake with them. 
@@ -119,7 +119,9 @@ head(df.raw)
 
 This output belowed is a quick display in case we need to peek back into our dataframe.
 
-![head()]()
+![head()](<img width="1082" alt="head" src="https://user-images.githubusercontent.com/65748521/131267115-ed64477d-5357-44c7-b456-c2cd4c9a77cc.png">
+ges.githubusercontent.com/65748521/131267129-fa19065b-ffc4-4341-a04e-68c74324e230.png)
+)
 
 From this output, together with the overview of each variable definition, only some variables are **quantitative**.
 In other word, they are numbers that can be calculate statistically without losing real-world meaning.
@@ -170,7 +172,8 @@ This lead to Parch's mean = 0 in an initial try.
 
 All these customization result this table output
 
-![quan plot()]() 
+![quan plot()](![quan plot](https://user-images.githubusercontent.com/65748521/131267165-24b3c7de-0d56-4a9f-89ea-4c63dad24865.png)
+) 
 
 Three observation can be remarked 
 
@@ -196,7 +199,8 @@ boxplot(df.quan,
 
 ```
 
-![boxplot]()
+![boxplot](![boxplot quan](https://user-images.githubusercontent.com/65748521/131267176-ee24bc75-68f9-4074-b9ad-31af13df2b6d.png)
+)
 
 From box plot, **Fare** is drastically manipulated by an outliner that exceed 500 British pounds.
 For future work in machine learning pipeline, this problem will need to be handled.
@@ -250,7 +254,8 @@ We refer all qualitative variables in df.qual with **all_categorical()**. This c
 
 The output looks like this 
 
-![qual table]()
+![qual table](![qual table](https://user-images.githubusercontent.com/65748521/131267181-68582273-72e0-493b-b133-f1978c401d35.png)
+)
 
 Initial observation by this numerical presentation tell us that :
 
@@ -289,7 +294,11 @@ Represented in pie chart, the binary value of survival and gender of the passeng
 
 
 
-![piechart]()
+![piechart](![surpie](https://user-images.githubusercontent.com/65748521/131267198-88332a67-667d-46fb-9413-fcc876a30c72.png))
+![empie](https://user-images.githubusercontent.com/65748521/131267209-4ae5ccc0-9369-4fbe-97aa-d34153c66a39.png)
+![sexpie](https://user-images.githubusercontent.com/65748521/131267218-1d0becb9-2599-42c1-ba1b-2dc33adb19ea.png)
+![pclasspie](https://user-images.githubusercontent.com/65748521/131267221-67723937-b707-4d90-8a37-8e548132b505.png)
+
 
 ## Analysis for Potential Predictor
 
@@ -312,13 +321,15 @@ boxplot(df.raw$Age ~ df.raw$Survived,
         col = "orange",
         border = "brown",
         horizontal = TRUE,
+        notch = TRUE
         )
 
 ```
 
 The output looks like this
 
-![ageboxsur]()
+![ageboxsur](![ageboxsur](https://user-images.githubusercontent.com/65748521/131267231-69ae69e2-260c-44c0-93b3-28cb8b6c1e0f.png)
+)
 
 From the grouped boxplot, age does not show a high potential relationship. 
 Good predictor should have a distinct difference among two groups.
@@ -334,11 +345,12 @@ ggplot(df.raw, aes(x=Age, fill=factor(Survived))) +
   scale_fill_discrete(name="Survived")
   
 ```
-![agesurhist]()
+![agesurhist](![agesurhist](https://user-images.githubusercontent.com/65748521/131267249-d70fe1ed-8431-4ae3-906f-c0dac84f5723.png)
+)
 
 On the contrary, this histogram show useful information for prediction.
 
-![hist]()
+
 
 ### 2. Relationship between Parch-SibSp-Survived
 
@@ -364,7 +376,8 @@ legend("topleft",
 
 The Scatter plot by group looks like this
 
-![scatter]()
+![scatter](![scat sib par](https://user-images.githubusercontent.com/65748521/131267280-9ce2eb2d-a727-4b2c-962b-3e9d0286f064.png)
+)
 
 
 
@@ -378,5 +391,7 @@ ggplot(data=df.raw,aes(Sex, fill = factor(Survived)))+geom_bar(stat = "count", p
 
 ```
 
+![gendersur](https://user-images.githubusercontent.com/65748521/131267301-c2c3e75f-42cd-4198-82d0-4571827cba78.png)
+![age sur hist](https://user-images.githubusercontent.com/65748521/131267306-c6cd2a34-49ba-4ec9-93b6-61416e984b6b.png)
 
 
