@@ -1,4 +1,4 @@
-The fall of the unsinkable ship : Titanic EDA
+#The fall of the unsinkable ship : Titanic EDA
 By Naphat Sanguansakpakdee
 
 The night that the RMS Titanic sink under dark cold North Atlantic sea is unarguably one of the most tragic disaster in modern history, with more than 1500 lives lost. If there is anything we could learn from this tragedy, that would be the Edwardian era life-death situation that the sink of titanic allows us to peek into. This is the the rare large collection of dataset that we would explore in this exploratory data analysis.  
