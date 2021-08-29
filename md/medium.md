@@ -306,7 +306,16 @@ be used to reasonably select an attribute in machine learning, or even feature e
 
 Recall that there are some inspiration from prior section that now we will jump right in
 
-###
+### 1. Correlation between Age-Survived.
+
+### 2. Correlation between Parch-SibSp-Survived
+
+### 3. Correlation between Embarked-Survived
+
+### 3. Correlation between Pclass-Embarked-Survived
+
+### 3. Correlation between Sex-Survived
+
 
 
 
