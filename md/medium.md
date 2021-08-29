@@ -42,10 +42,11 @@ Interestingly, these labels also refer to socio-economic status (SES) whereas fi
 
 8.Parch is a number of parent and child 
 
-9.Fare is the price of the ticket in British pound that passenger purchase. Note that some passenger fare is 0.00  
+9.Fare is the price of the ticket in British pound that passenger purchase. Note that some passenger fare is 0.00, meaning that the passenger did not pay for the ticket.   
 
-10.Ticket The ticket number of the passenger
-11.Cabin The cabin number of the passenger on the Titanic
+10.Ticket is the combination of letter and number printed on ticket of the passenger
+
+11.Cabin is the cabin number of the passenger on the Titanic
 12.Embarked The port that the passenger embark on the Titanic
 
 ## Quantitative Attribute
