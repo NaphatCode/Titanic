@@ -242,11 +242,26 @@ df.qual %>%
   )
   
 ```
-tbl_summary() counts a frequency of each value of qualitative variables, and compute the percentage by default setting.
+tbl_summary() counts a frequency of each value of qualitative variables, and compute the percentage by default setting. Thus we don't need to specify anything**statistics** parameter.
 
->    digits = list(all_categorical()~c(2,2))
+>    digits = list(all_categorical()~c(0,2))
 
-We refer all qualitaive variables in df.qual with **all_categorical()**. This parameter will increase decimal places for more precise calculation 
+We refer all qualitative variables in df.qual with **all_categorical()**. This command line will increase decimal places of percentage for more precise calculation. 
+
+The output looks like this 
+
+![qual table]()
+
+Initial observation by this numerical presentation tell us that :
+
+1. Only 38.38% of 891 passengers survived from the incident.
+2. The majority of passenger held third-class ticket (55.11%). 
+3. Male passenger (65.34%) are almost twice of female passenger (35.24%).
+4. Most of the passenger embark on the ship at Southampton (72.28%), followed by Cherbourg (18.86%) and Queenstown (8.64%). Embarkation of two passenger is unknown
+
+This information could be more useful with another kind of visualization.
+
+
 
 ## Skew 
 
