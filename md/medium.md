@@ -178,7 +178,9 @@ Three observation can be remarked
 
 2.The average of **SibSp** and **Parch** are 0.52 and 0.38 respectively. It is obvious that number of people could not be a decimal. However, by specifying these two variable as continuous to calculate the mean, it is evident that the passenger rarely brought their relatives together with them. The low S.D. for SibSp and Parch, 1.10 and 0.81 respectively, supports this observation. The reason that SibSp has a slightly higher average and S.D., estimated as 1 by default setting, resonate with the reasoning that a couple would aboard the ship together.
 
-3.**digits** displays 32.20 British pounds for average with highest S.D. among four quantitative variables
+3.**Fare** displays 32.20 British pounds for average with highest S.D. among four quantitative variables (49.69). This finding associates the rigid separation of ticket classes, that cause the fare ticket to fluctuate among 891 passengers.
+
+
 
 
 ## Qualitative
