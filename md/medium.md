@@ -1,12 +1,11 @@
 The fall of the unsinkable ship : Titanic EDA
 By Naphat Sanguansakpakdee
 
-The night that the RMS Titanic sink under dark cold North Atlantic sea is unarguably one of the most tragic disaster in modern history, with more than 1500 lives lost. If there is anything we could learn from this tragedy, that would be the fact that the sink of titanic allows us to peek into the rare large collection of data from life-death situation. The dataset that we would explore in this article  
+The night that the RMS Titanic sink under dark cold North Atlantic sea is unarguably one of the most tragic disaster in modern history, with more than 1500 lives lost. If there is anything we could learn from this tragedy, that would be the Edwardian era life-death situation that the sink of titanic allows us to peek into. This is the the rare large collection of dataset that we would explore in this exploratory data analysis.  
 
 ## Titanic Dataset Overview
 
-In this first section we will discuss basic information of the dataset, especially the meaning of each variable. Let’s begin with the definition of each variable. Otherwise, we could “sail” nowhere without a proper introduction to our 12 variables, the very fundamental of the TItanic dataset. 
-The definition of each variable is listed in the following table :
+In this first section we will discuss basic information of the dataset, especially the meaning of each variable. . Otherwise, we could “sail” nowhere without a proper introduction to our 12 variables, listed in the following table :
 
 | Variable Name | Meaning   | Possible Value |
 |———————|—|—|
@@ -37,9 +36,9 @@ Interestingly, these labels also refer to socio-economic status (SES) whereas fi
 
 5.Age is of the number of years of each passenger age. The age with nearest hundredth decimal represents the month in age. For instance, 0.42 is an approximation of 5 month old passenger (0.416666.. year). 
 
-5.Sibsp is a number of siblings and spouses, of that passenger, boarding the Titanic. In other word, the siblings and spouses are not counted if they are not on the Titanic ship. "Sibling" includes both biological brother/sister and stepbrother/stepsister. However, "Spouse" defines only 
+5.Sibsp is a number of siblings and spouses, of that passenger, boarding the Titanic. In other word, the siblings and spouses are not counted if they are not on the Titanic ship. "Sibling" includes both biological brother/sister and stepbrother/stepsister. However, "Spouse" defines narrowly husband and wife relationship, excluding mistress and financé. 
 
-5.Parch is a number of 
+5.Parch is a number of parent and child 
 Ticket The ticket number of the passenger
 Cabin The cabin number of the passenger on the Titanic
 Embarked The port that the passenger embark on the Titanic
