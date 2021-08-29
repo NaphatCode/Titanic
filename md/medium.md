@@ -35,11 +35,11 @@ Interestingly, these labels also refer to socio-economic status (SES) whereas fi
   
 4.Sex indicates biological gender of the passenger, “male” and “female”.
 
-5.Age is of the number of years of each passenger age. The age with nearest hundredth decimal represents the month in age. For instance, 0.42 is an estimation of 5 month. 
+5.Age is of the number of years of each passenger age. The age with nearest hundredth decimal represents the month in age. For instance, 0.42 is an approximation of 5 month old passenger (0.416666.. year). 
 
-5.Sibsp is a number of siblings and spouses, of that passenger, boarding the Titanic. In other word, the siblings and spouses are not counted if they are not on the Titanic ship.
+5.Sibsp is a number of siblings and spouses, of that passenger, boarding the Titanic. In other word, the siblings and spouses are not counted if they are not on the Titanic ship. "Sibling" includes both biological brother/sister and stepbrother/stepsister. However, "Spouse" defines only 
 
-5.Parch is a number 
+5.Parch is a number of 
 Ticket The ticket number of the passenger
 Cabin The cabin number of the passenger on the Titanic
 Embarked The port that the passenger embark on the Titanic
