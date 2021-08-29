@@ -25,7 +25,7 @@ In this first section we will discuss basic information of the dataset, especial
 | cabin         | Cabin number          | String                                         |
 | embarked      | Embarkation Port      | C = Cherbourg, Q = Queenstown, S = Southampton |
 
-*table 1 : variable definition*
+**table 1 : variable definition**
 
   
 To elaborate, the training data contains 891 passengers. 
@@ -53,7 +53,6 @@ To elaborate, the training data contains 891 passengers.
   11. **Cabin** is the **cabin number** assigned to the passenger on the Titanic. 
 
   12. **Embarked** is the **embarkation port** of the passenger consisting of three locations, which are Cherbourg, Queenstown and Southampton.
-                                                      *table 1 : Titanic dataset variable definition* 
 
 ## Quantitative Attribute
 Now that we could recognize our variable, let's make a firm handshake with them. 
@@ -61,11 +60,9 @@ Now that we could recognize our variable, let's make a firm handshake with them.
 We start by importing our training data, and then kindly ask Rstudio to summarize the data with command "summary()" 
 
 '''
-{
 df.raw = read.csv("~/development/Titanic/data/train.csv")
-
 summary(df.raw)
-}
+
 '''
 
 
@@ -77,10 +74,10 @@ I named this dataframe as df.raw, which later on we will call this object by thi
 
 <p align="center">
 <img width="400" alt="summary"  src="https://user-images.githubusercontent.com/65748521/131241040-9d0219e0-e509-4e9b-a309-c4993a5e2e39.png">
- 
 </p>
 
-*figure 1 : screenshot of summary output*                                                      
+figure 1 : output screenshot of summary(df.raw)
+
 We can reaffirm the dimension (the size) of our dataframe by
 following command
 
