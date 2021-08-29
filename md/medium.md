@@ -29,12 +29,17 @@ To elaborate, the training data contain 891 passengers.
 
 2. Survival is a binary label for survival state of each passenger. In fact, survival is a subject matter for machine learning prediction challenge. In other word, survival is the output variable. The survived passenger is labeled as “1”, and the deceased one is labeled as “0”. 
 
-3. Pclass is the ticket class of the passenger, in which “1”, “2” and “3” stand for first-class, second-class and third-class ticket respectively. Interestingly, these labels also refer to socio-economic status (SES) whereas first-class ticket is a proxy for the upper-class. Second-class refers to the middle-class and Third-class ticket represents the lower-class. From historical perspective, this connection shows us that accessibility to Titanic is a direct indicator of wealth during.….
+3. Pclass is the ticket class of the passenger, in which “1”, “2” and “3” stand for first-class, second-class and third-class ticket respectively.
+
+Interestingly, these labels also refer to socio-economic status (SES) whereas first-class ticket is a proxy for the upper-class. Second-class refers to the middle-class and Third-class ticket represents the lower-class. From historical perspective, this connection shows us that accessibility to Titanic is a direct indicator of wealth during 1912.
   
-4.Sex indicate biological gender of the passenger
-Age of the passenger (year)
-Sibsp Number of siblings and spouses on the Titanic
-Parch
+4.Sex indicates biological gender of the passenger, “male” and “female”.
+
+5.Age is of the number of years of each passenger age. The age with nearest hundredth decimal represents the month in age. For instance, 0.42 is an estimation of 5 month. 
+
+5.Sibsp is a number of siblings and spouses, of that passenger, boarding the Titanic. In other word, the siblings and spouses are not counted if they are not on the Titanic ship.
+
+5.Parch is a number 
 Ticket The ticket number of the passenger
 Cabin The cabin number of the passenger on the Titanic
 Embarked The port that the passenger embark on the Titanic
