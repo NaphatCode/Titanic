@@ -14,7 +14,7 @@ In this first section we will discuss basic information of the dataset, especial
 | Variable Name |        Meaning        |                 Possible Value                 |
 |:-------------:|:---------------------:|:----------------------------------------------:|
 | PassengerID   | Identification number | Integer (1- 891)                               |
-| survival      | State of survival     | 0 = No, 1 = Yes                                |
+| survived      | State of survival     | 0 = No, 1 = Yes                                |
 | pclass        | Ticket class          | 1= First , 2= Second, 3 = Third                |
 | Name          | Passenger name        | String                                         |
 | sex           | Gender                | male,female                                    |
@@ -33,7 +33,7 @@ To elaborate, the training data contains 891 passengers.
 
   1.  Each passenger is identified with **PassengerID** starting from 1 to 891. 
 
-  2.  **Survival** is a binary label for **survival state** of each passenger from the accident. In fact, survival is a subject matter for machine learning prediction challenge. In other word, survival is the output variable. The survived passenger is labeled as “1”, and the deceased one is labeled as “0”. 
+  2.  **Survived** is a binary label for **survival state** of each passenger from the accident. In fact, survival is a subject matter for machine learning prediction challenge. In other word, survival is the output variable. The survived passenger is labeled as “1”, and the deceased one is labeled as “0”. 
 
   3.  **Pclass** is the ticket class of the passenger, in which “1”, “2” and “3” stand for first-class, second-class and third-class ticket respectively. Interestingly, these labels also refer to socio-economic status (SES) whereas first-class ticket is a proxy for the upper-class. Second-class refers to the middle-class and Third-class ticket represents the lower-class. From historical perspective, this connection shows us that accessibility to Titanic is a direct indicator of wealth during 1912.
 
@@ -195,12 +195,59 @@ boxplot(df.quan,
 )
 
 ```
-From box plot 
 
+![boxplot]()
 
+From box plot, **Fare** is drastically manipulated by an outliner that exceed 500 British pounds.
+For future work in machine learning pipeline, this problem will need to be handled.
+Handling an outliner might be out of scope of EDA, but visualizing data with box plot allow us 
+to stress the impact of the maximum in variable **Fare**, more than classical output from summary() could 
+show by its numerical presentation.  
 
+This section work inspires a further analysis for feature engineering :
+
+1. Correlation between age-survival.
+
+2. Correlation between Parch-SibSp-survival
+
+, which will be explore through graphical method in later section.
 
 ## Qualitative
+
+Before we investigate correlation between quantitative variables and survival of passenger further, let's 
+take a good look at our **qualitative variables**.
+
+The 4 qualitative variables in Titanic dataset that we can investigate by statistics are 
+-**Survived** : 0 = No, 1=Yes
+-**Pclass**   : 1 = First-class, 2 = Second-class, 3 = Third-class
+-**Sex**      : male,female
+-**Embarked** : C = Cherbourg, Q = Queenstown, S = Southampton
+
+One might notice that PassengerID, Name, Ticket and Cabin are not included.
+These variables are all personal information without pattern/repetition.
+
+Cabin and Ticket might possibly contain information of the location of the passenger room.
+However, **Pclass** contains same information in much more rigid manner, because the location of the passenger room is already assigned by the ticket class.
+
+tbl_summary() is still a useful tool. we just need to alter our command a little bit
+
+```
+
+#separate four variables into new dataframe
+df.qual <- df.raw %>% select(Survived,Pclass,Sex,Embarked)
+#summarize into a table
+df.qual %>% 
+  tbl_summary(
+    digits = list(all_categorical()~c(2,2))
+  )
+  
+```
+tbl_summary() counts a frequency of each value of qualitative variables, and compute the percentage by default setting.
+
+>    digits = list(all_categorical()~c(2,2))
+
+We refer all qualitaive variables in df.qual with **all_categorical()**. This parameter will increase decimal places for more precise calculation 
+
 ## Skew 
 
 
