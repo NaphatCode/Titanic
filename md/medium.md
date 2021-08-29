@@ -66,7 +66,7 @@ I named this dataframe as df.raw, which later on we will call this object by thi
 
 "summary" will display some useful statistical value of each column as shown below 
 
-![summary](~/Development/Titanic/image/summary.png)
+![summary](naphat/Development/Titanic/image/summary.png)
 
 We can reaffirm the dimension (the size) of our dataframe by
 following command
