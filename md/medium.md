@@ -22,7 +22,7 @@ In this first section we will discuss basic information of the dataset, especial
 | cabin         | Cabin number | String  |
 | embarked      |  Embarkation Port | C = Cherbourg, Q = Queenstown, S = Southampton  |
 
-To elaborate, the training data contain 891 passengers. 
+To elaborate, the training data contains 891 passengers. 
 
 1. Each passenger is identified with PassengerID starting from 1 to 891. 
 
@@ -40,16 +40,19 @@ Interestingly, these labels also refer to socio-economic status (SES) whereas fi
 
 7.Sibsp is a number of siblings and spouses, of that passenger, boarding the Titanic. In other word, the siblings and spouses are not counted if they are not on the Titanic ship. "Sibling" includes both biological brother/sister and stepbrother/stepsister. However, "Spouse" defines narrowly husband and wife relationship, excluding mistress and financé. 
 
-8.Parch is a number of parent and child 
+8.Parch is a number of passenger's parent and child boarding the ship. Heed that guardian with non-relative relationship such as nanny is not counted. Therefore the children travelling with the nanny is recorded with parch=0.
 
 9.Fare is the price of the ticket in British pound that passenger purchase. Note that some passenger fare is 0.00, meaning that the passenger did not pay for the ticket.   
 
-10.Ticket is the combination of letter and number printed on ticket of the passenger
+10.Ticket is the combination of letter and number printed on ticket of the passenger.
 
-11.Cabin is the cabin number of the passenger on the Titanic
-12.Embarked The port that the passenger embark on the Titanic
+11.Cabin is the cabin number assigned to the passenger on the Titanic. 
+
+12.Embarked is the embarkation port of the passenger consisting of three locations, which are Cherbourg, Queenstown and Southampton.
 
 ## Quantitative Attribute
+Now that we could recognize our variable, let's make a firm handshake with them. 
+
 Mean and S.D.
 
 ## Qualitative
