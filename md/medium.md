@@ -9,6 +9,7 @@ Disclaimer : This EDA is written as a "study note" upon assumption that the read
 
 In this first section we will discuss basic information of the dataset, especially the meaning of each variable. Otherwise, we could “sail” nowhere without a proper introduction to our 12 variables, listed in the following table :
 
+<p align="center">
 | Variable Name |        Meaning        |                 Possible Value                 |
 |:-------------:|:---------------------:|:----------------------------------------------:|
 | PassengerID   | Identification number | Integer (1- 891)                               |
@@ -23,7 +24,9 @@ In this first section we will discuss basic information of the dataset, especial
 | ticket        | Ticket number         | String                                         |
 | cabin         | Cabin number          | String                                         |
 | embarked      | Embarkation Port      | C = Cherbourg, Q = Queenstown, S = Southampton |
-
+**table 1 : variable definition**
+ </p>
+  
 To elaborate, the training data contains 891 passengers. 
 
   1.  Each passenger is identified with **PassengerID** starting from 1 to 891. 
@@ -55,10 +58,13 @@ Now that we could recognize our variable, let's make a firm handshake with them.
 
 We start by importing our training data, and then kindly ask Rstudio to summarize the data with command "summary()" 
 
+'''
 df.raw = read.csv("~/development/Titanic/data/train.csv")
+
 summary(df.raw)
 
-Mean and S.D.
+'''
+
 
 At this point our 891 rows, 12 columns of Titanic training data is "stored" as object in global environment. As the original file comes with file extension ".csv", our object is stored as a dataframe. Dataframe can be practically considered as a table format for R.
 
@@ -68,6 +74,7 @@ I named this dataframe as df.raw, which later on we will call this object by thi
 
 <p align="center">
 <img width="400" alt="summary"  src="https://user-images.githubusercontent.com/65748521/131241040-9d0219e0-e509-4e9b-a309-c4993a5e2e39.png">
+** figure 1 : output screenshot of summary(df.raw)**
 </p>
 
 We can reaffirm the dimension (the size) of our dataframe by
