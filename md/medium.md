@@ -9,20 +9,20 @@ Disclaimer : This EDA is written as a "study note" upon assumption that the read
 
 In this first section we will discuss basic information of the dataset, especially the meaning of each variable. . Otherwise, we could “sail” nowhere without a proper introduction to our 12 variables, listed in the following table :
 
-| Variable Name |         Meaning       |         Possible Value                           |
-|---------------|----------—------------|—-------------------------------------------------|
-| PassengerID   | Identification number | Integer (1- 891)                                 |
-| survival      | State of survival     | 0 = No, 1 = Yes                                  |
-| pclass        | Ticket class          | 1= First , 2= Second, 3 = Third                  |
-| Name          | Passenger name        | String                                           |
-| sex           |  Gender               | male,female                                      |
-| age           | Passenger Age (year)  | Decimal (0.42-80)                                |
-| sibsp         | #siblings and spouses | Integer (0-8)                                    |
-| parch         | #parents and children | Integer (0-6)                                    |
-| fare          | Ticket fare           | Decimal (0.00-512.33)                            |
-| ticket        | Ticket number         | String                                           |
-| cabin         | Cabin number          | String                                           |
-| embarked      | Embarkation Port      | C = Cherbourg, Q = Queenstown, S = Southampton   |
+| Variable Name |        Meaning        |                 Possible Value                 |
+|:-------------:|:---------------------:|:----------------------------------------------:|
+| PassengerID   | Identification number | Integer (1- 891)                               |
+| survival      | State of survival     | 0 = No, 1 = Yes                                |
+| pclass        | Ticket class          | 1= First , 2= Second, 3 = Third                |
+| Name          | Passenger name        | String                                         |
+| sex           | Gender                | male,female                                    |
+| age           | Passenger Age (year)  | Decimal (0.42-80)                              |
+| sibsp         | #siblings and spouses | Integer (0-8)                                  |
+| parch         | #parents and children | Integer (0-6)                                  |
+| fare          | Ticket fare           | Decimal (0.00-512.33)                          |
+| ticket        | Ticket number         | String                                         |
+| cabin         | Cabin number          | String                                         |
+| embarked      | Embarkation Port      | C = Cherbourg, Q = Queenstown, S = Southampton |
 
 To elaborate, the training data contains 891 passengers. 
 
