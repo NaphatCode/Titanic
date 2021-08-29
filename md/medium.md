@@ -1,6 +1,6 @@
-#The fall of the unsinkable ship : Titanic EDA
+# The fall of the unsinkable ship : Titanic EDA
 
-##By Naphat Sanguansakpakdee
+## By Naphat Sanguansakpakdee
 
 The night that the RMS Titanic sink under dark cold North Atlantic sea is unarguably one of the most tragic disaster in modern history, with more than 1500 lives lost. If there is anything we could learn from this tragedy, that would be the Edwardian era life-death situation that the sink of titanic allows us to peek into. This is the the rare large collection of dataset that we would explore in this exploratory data analysis.  
 
@@ -116,7 +116,12 @@ head(df.raw)
 This output is a quick display in case we need to peek back into our dataframe.
 From this output, together with the overview of each variable definition, only some variables are **quantitative**.
 In other word, they are numbers that can be calculate statistically without losing real-world meaning.
-The four quantitative variables in Titanic dataset are **Age**,**Sibsp**,**Parch**,**Fare**
+
+The four quantitative variables in Titanic dataset are 
+  -**Age**
+  -**Sibsp**
+  -**Parch**
+  -**Fare**
 
 ## Qualitative
 ##Skew 
