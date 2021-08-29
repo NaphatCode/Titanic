@@ -174,7 +174,7 @@ All these customization result this table output
 
 Three observation can be remarked 
 
-1.**Age** mean is 29.70 years with S.D. = 14.53. This means that the average age of 891 passenger fall within young adulthood range. Age is the second most spread out quantitative variables. This finding associates with the context of data. RMS Titanic's maiden vayage had two responsibilities. First priority is transport passenger back and forth. The second is to carry mail and substantial cargo from Europe to North America. Therefore, the ship carried both the wealth and the immigrant from Great Britain, Ireland and Scandinavia. The immigrants starting new life at new continental should be among young adulthood range. 
+1.**Age** mean is 29.70 years with S.D. = 14.53. This means that the average age of 891 passenger fall within young adulthood range. Age is the second most spread out quantitative variables. This finding associates with the context of data. RMS Titanic's maiden vayage had two responsibilities. First priority is transport passenger back and forth the North Atlantic. The second is to carry mail and substantial cargo from Europe to North America. Therefore, the ship carried both the wealth and the immigrant from Great Britain, Ireland and Scandinavia. The immigrants starting new life at new continental should be among young adulthood range. 
 
 2.The average of **SibSp** and **Parch** are 0.52 and 0.38 respectively. It is obvious that number of people could not be a decimal. However, by specifying these two variable as continuous to calculate the mean, it is evident that the passenger rarely brought their relatives together with them. The low S.D. for SibSp and Parch, 1.10 and 0.81 respectively, supports this observation. The reason that SibSp has a slightly higher average and S.D., estimated as 1 by default setting, resonate with the reasoning that a couple would aboard the ship together.
 
@@ -204,13 +204,13 @@ Handling an outliner might be out of scope of EDA, but visualizing data with box
 to stress the impact of the maximum in variable **Fare**, more than classical output from summary() could 
 show by its numerical presentation.  
 
-This section work inspires a further analysis for feature engineering :
+This section inspires a further analysis to find potential predictor for survival :
 
 1. Correlation between age-survival.
 
 2. Correlation between Parch-SibSp-survival
 
-, which will be explore through graphical method in later section.
+, which will be explored through graphical method in later section.
 
 ## Qualitative
 
@@ -283,12 +283,30 @@ pie(e,labels,radius=1.5,main = "Embarkation port of 891 passengers")
 ```
 
 We utilize pie() to create pie chart for each categorical variable.
-Pie chart is the optimal way to illustrate proportion of data within the same variables across the sample. The output looks like this.
+Pie chart is the optimal way to illustrate proportion of data within the same variables across the sample. Another perk of pie() is that the parameter is very straightforward. The output looks like this.
+
+Represented in pie chart, the binary value of survival and gender of the passenger are distributed in a very similar proportion. This inspire us to find relationship between Survived-Sex. 
+
+There are also other relationships worth investigating. Embarkation port relates to the hometown of
+the passenger. Survived-Embarked relationship could contain the effect of different nationality/hereditary. The effect is not necessary a genetic advantage/disadvantage. It also include 
+the accessibility to the rescue during emergency, that might differ based on different nationality.
+The relationship between Pclass-Embarked-Survived is also an important relationship that could support this argument.
+
+The another one is Survived-Sex. In practical, gender of the passenger affect survival tremendously, considering that female is prioritized to be rescued first.
+
 
 ![piechart]()
 
-## Skew 
+## Analysis for Potential Predictor
 
+In this section, we dissect our data further to accomplish the objective of exploratory data analysis.
+We start looking for correlation between each variable and **Survived** (Survival state). 
+Our expectation is the potential survival predictor for survival. The finding from this section could 
+be used to reasonably select an attribute in machine learning, or even feature engineering.
+
+Recall that there are some inspiration from prior section that now we will jump right in
+
+###
 
 
 
