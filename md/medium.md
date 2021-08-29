@@ -124,6 +124,17 @@ The four quantitative variables in Titanic dataset are
   - **Fare**
 
 Let's extract these four columns/variables from df.raw 
+
+```
+df.quan <- df.raw %>% select(Age,SibSp,Parch,Fare)
+df.quan %>% 
+  tbl_summary(
+    type = list(SibSp ~ 'continuous',Parch ~ 'continuous'),
+    statistic = list(all_continuous()~"{mean} ({sd})"),
+    digits = list(all_continuous()~c(2,2))
+  )
+```
+
 ## Qualitative
 ##Skew 
 
