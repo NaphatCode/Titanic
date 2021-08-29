@@ -27,7 +27,9 @@ In this first section we will discuss basic information of the dataset, especial
 To elaborate, the training data contains 891 passengers. 
 
 1.Each passenger is identified with PassengerID starting from 1 to 891. 
+
 2.Survival is a binary label for survival state of each passenger. In fact, survival is a subject matter for machine learning prediction challenge. In other word, survival is the output variable. The survived passenger is labeled as “1”, and the deceased one is labeled as “0”. 
+
 3.Pclass is the ticket class of the passenger, in which “1”, “2” and “3” stand for first-class, second-class and third-class ticket respectively.
 
 Interestingly, these labels also refer to socio-economic status (SES) whereas first-class ticket is a proxy for the upper-class. Second-class refers to the middle-class and Third-class ticket represents the lower-class. From historical perspective, this connection shows us that accessibility to Titanic is a direct indicator of wealth during 1912.
