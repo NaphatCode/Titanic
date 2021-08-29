@@ -285,6 +285,7 @@ pie(e,labels,radius=1.5,main = "Embarkation port of 891 passengers")
 We utilize pie() to create pie chart for each categorical variable.
 Pie chart is the optimal way to illustrate proportion of data within the same variables across the sample. The output looks like this.
 
+![piechart]()
 
 ## Skew 
 
