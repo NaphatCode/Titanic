@@ -3,24 +3,26 @@ By Naphat Sanguansakpakdee
 
 The night that the RMS Titanic sink under dark cold North Atlantic sea is unarguably one of the most tragic disaster in modern history, with more than 1500 lives lost. If there is anything we could learn from this tragedy, that would be the Edwardian era life-death situation that the sink of titanic allows us to peek into. This is the the rare large collection of dataset that we would explore in this exploratory data analysis.  
 
+Disclaimer : This EDA is written as a "study note" upon assumption that the reader is a beginner in R just like this author. Thus several basic topic such as dataframe is mentioned elaborately. - Naphat   
+
 ## Titanic Dataset Overview
 
 In this first section we will discuss basic information of the dataset, especially the meaning of each variable. . Otherwise, we could “sail” nowhere without a proper introduction to our 12 variables, listed in the following table :
 
-| Variable Name | Meaning   | Possible Value |
-|———————|—|—|
-| PassengerID | Identification number   | Integer (1- 891) |
-| survival      | State of survival | 0 = No, 1 = Yes  |
-| pclass        | Ticket class | 1= First , 2= Second, 3 = Third  |
-| Name| Passenger name| string  |
-| sex           |  Gender | male,female  |
-| age           | Passenger Age (year)  |  Decimal (0.42-80)  |
-| sibsp         | Count of siblings and spouses on board  | Integer (0-8)  |
-| parch         | Count of parents and children on board | Integer (0-6)  |
-| fare | Ticket fare| Decimal (0.00-512.33) |
-| ticket        | Ticket number | String |
-| cabin         | Cabin number | String  |
-| embarked      |  Embarkation Port | C = Cherbourg, Q = Queenstown, S = Southampton  |
+| Variable Name |         Meaning       |         Possible Value           |
+|---------------|----------—------------|—---------------------------------|
+| PassengerID   | Identification number | Integer (1- 891)                 |
+| survival      | State of survival     | 0 = No, 1 = Yes                  |
+| pclass        | Ticket class          | 1= First , 2= Second, 3 = Third  |
+| Name          | Passenger name        | String                           |
+| sex           |  Gender               | male,female                      |
+| age           | Passenger Age (year)  | Decimal (0.42-80)                |
+| sibsp         | #siblings and spouses | Integer (0-8)                    |
+| parch         | #parents and children | Integer (0-6)                    |
+| fare          | Ticket fare           | Decimal (0.00-512.33)            |
+| ticket        | Ticket number         | String                           |
+| cabin         | Cabin number          | String                           |
+| embarked      | Embarkation Port      | C = Cherbourg, Q = Queenstown, S = Southampton  |
 
 To elaborate, the training data contains 891 passengers. 
 
@@ -53,7 +55,25 @@ Interestingly, these labels also refer to socio-economic status (SES) whereas fi
 ## Quantitative Attribute
 Now that we could recognize our variable, let's make a firm handshake with them. 
 
-Mean and S.D.
+We start by importing our training data, and then kindly ask Rstudio to summarize the data with command "summary()" 
+
+df.raw = read.csv("~/development/Titanic/data/train.csv")
+summary(df.raw)Mean and S.D.
+
+At this point our 891 roww, 12 columns of Titanic training data is "stored" as object in global environment. As the original file comes with file extension ".csv", our object is stored as a dataframe. Dataframe can be practically considered as a table format for R.
+
+
+I named this dataframe as df.raw, which later on we will call this object by this name in other commands. 
+
+"summary" will display some useful statistical value of each column as shown below 
+
+
+
+We can reaffirm the dimension (the size) of our dataframe by
+following command
+
+nrow(df.raw)
+
 
 ## Qualitative
 ##Skew 
