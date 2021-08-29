@@ -53,7 +53,7 @@ To elaborate, the training data contains 891 passengers.
   11. **Cabin** is the **cabin number** assigned to the passenger on the Titanic. 
 
   12. **Embarked** is the **embarkation port** of the passenger consisting of three locations, which are Cherbourg, Queenstown and Southampton.
-                                                         *table 1 : Titanic dataset variable definition* 
+                                                      *table 1 : Titanic dataset variable definition* 
 
 ## Quantitative Attribute
 Now that we could recognize our variable, let's make a firm handshake with them. 
@@ -79,8 +79,8 @@ I named this dataframe as df.raw, which later on we will call this object by thi
 <img width="400" alt="summary"  src="https://user-images.githubusercontent.com/65748521/131241040-9d0219e0-e509-4e9b-a309-c4993a5e2e39.png">
  
 </p>
-                                                         *figure 1 : screenshot of summary() output*
 
+*figure 1 : screenshot of summary output*                                                      
 We can reaffirm the dimension (the size) of our dataframe by
 following command
 
