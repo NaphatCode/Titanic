@@ -61,8 +61,9 @@ We start by importing our training data, and then kindly ask Rstudio to summariz
 
 
 ```
-df.raw = read.csv("~/development/Titanic/data/train.csv")
-summary(df.raw)
+
+              df.raw = read.csv("~/development/Titanic/data/train.csv")
+              summary(df.raw)
 
 ```
 
