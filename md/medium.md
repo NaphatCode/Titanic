@@ -59,12 +59,10 @@ Now that we could recognize our variable, let's make a firm handshake with them.
 
 We start by importing our training data, and then kindly ask Rstudio to summarize the data with command "summary()" 
 
-'''
-df.raw = read.csv("~/development/Titanic/data/train.csv")
+
+'''df.raw = read.csv("~/development/Titanic/data/train.csv")
 summary(df.raw)
-
 '''
-
 
 At this point our 891 rows, 12 columns of Titanic training data is "stored" as object in global environment. As the original file comes with file extension ".csv", our object is stored as a dataframe. Dataframe can be practically considered as a table format for R.
 
@@ -75,8 +73,6 @@ I named this dataframe as df.raw, which later on we will call this object by thi
 <p align="center">
 <img width="400" alt="summary"  src="https://user-images.githubusercontent.com/65748521/131241040-9d0219e0-e509-4e9b-a309-c4993a5e2e39.png">
 </p>
-
-figure 1 : output screenshot of summary(df.raw)
 
 We can reaffirm the dimension (the size) of our dataframe by
 following command
