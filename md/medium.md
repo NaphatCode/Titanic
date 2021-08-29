@@ -66,8 +66,9 @@ I named this dataframe as df.raw, which later on we will call this object by thi
 
 "summary" will display some useful statistical value of each column as shown below 
 
-<img align="center" img width="400" alt="summary"  src="https://user-images.githubusercontent.com/65748521/131241040-9d0219e0-e509-4e9b-a309-c4993a5e2e39.png">
-
+<p align="center">
+<img width="400" alt="summary"  src="https://user-images.githubusercontent.com/65748521/131241040-9d0219e0-e509-4e9b-a309-c4993a5e2e39.png">
+</p>
 
 We can reaffirm the dimension (the size) of our dataframe by
 following command
