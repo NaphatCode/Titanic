@@ -118,10 +118,10 @@ From this output, together with the overview of each variable definition, only s
 In other word, they are numbers that can be calculate statistically without losing real-world meaning.
 
 The four quantitative variables in Titanic dataset are 
-  -**Age**
-  -**Sibsp**
-  -**Parch**
-  -**Fare**
+  - **Age**
+  - **Sibsp**
+  - **Parch**
+  - **Fare**
 
 ## Qualitative
 ##Skew 
