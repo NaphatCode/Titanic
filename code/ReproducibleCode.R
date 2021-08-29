@@ -45,25 +45,65 @@ df.qual %>%
     digits = list(all_categorical()~c(0,2)),
     
   )
-
-df.qual$Survived<-ifelse(df.qual$Survived==2,0,1)
-df.qual
-
-# Create data for the graph.
+#Pie chart
 s <- c(342,549 )
 labels <- c("Survived (38.38%)", "Not Survived (61.62%)")
-# Plot the chart.
 pie(x,labels,radius = 1.5,main = "Survival state of 891 passengers")
-
 p <- c(216,184,491)
 labels <- c("First-class (24.24%)", "Second-class (20.65%)","Third-class (55.11%)")
 pie(p,labels,radius = 1.5,main = "Ticket Class of 891 passengers")
-
-# sex pie plot
 se <- c(314,577 )
 labels <- c("Female (35.24%)", "Male (64.76%)")
 pie(se,labels,radius = 1.5,main = "Gender of 891 passengers")
-
 e <- c(2,168,77,549 )
 labels <- c("Unknown (0.22%)", "Cherbourg (18.86%)"," Queenstown (8.64%)","Southampton (72.28%)")
 pie(e,labels,radius=1.5,main = "Embarkation port of 891 passengers")
+
+#Age-Survived
+boxplot(df.raw$Age ~ df.raw$Survived,
+        main =  "Age Boxplot Comparison between Survivor and Non-survivor  ",
+        col = "orange",
+        border = "brown",
+        horizontal = TRUE,
+        )
+
+ggplot(df.raw, aes(x=Age, fill=factor(Survived))) +
+  geom_histogram(bins=30)+
+  #facet_grid(.~Sex)+
+  ggtitle("Age vs Survived")+
+  scale_fill_discrete(name="Survived")
+
+#Sex-Survived
+ggplot(data=df.raw,aes(Sex, fill = factor(Survived)))+geom_bar(stat = "count", position = "fill") +xlab("Sex") + scale_fill_discrete(name = "Survival Percentage")+ylab("Passenger") + ggtitle("Proportion of Survivor Gender")+scale_y_continuous(labels = function(x) paste0(x*100, "%"))+scale_fill_brewer()
+
+#Parch SibSp Sur
+# Scatter plot
+Parch <- df.raw$Parch
+SibSp <- df.raw$SibSp
+z <- df.raw$Survived
+plot(Parch, SibSp,
+     pch = 19,
+     col = factor(z),
+     main = "Scatter plot by group of Survivor state")
+
+# Legend
+legend("topleft",
+       legend = levels(factor(z)),
+       pch = 19,
+       col = factor(levels(factor(z)))) 
+
+#PClass Embarked Survied
+# Scatter plot
+Pclass <- df.raw$Pclass
+Embarked <- df.raw$Embarked
+z <- df.raw$Survived
+plot(Pclass, Embarked,
+     pch = 19,
+     col = factor(z),
+     main = "Scatter plot by group of Survivor state (Pclass,Embarked)")
+
+# Legend
+legend("topleft",
+       legend = levels(factor(z)),
+       pch = 19,
+       col = factor(levels(factor(z)))) 

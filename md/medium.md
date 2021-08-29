@@ -2,9 +2,9 @@
 
 **By Naphat Sanguansakpakdee**
 
-The night that the RMS Titanic sink under dark cold North Atlantic sea is unarguably one of the most tragic disaster in modern history, with more than 1500 lives lost. If there is anything we could learn from this tragedy, that would be the Edwardian era life-death situation that the sink of titanic allows us to peek into. This is the the rare large collection of dataset that we would explore in this exploratory data analysis.  
+The night that the RMS Titanic sink under dark cold North Atlantic sea is unarguably one of the most tragic disaster in modern history, with more than 1500 lives lost. If there is anything we could learn from this tragedy, that would be the Edwardian era life-death situation that the sink of Titanic allows us to peek into. This is the the rare large collection of dataset that we would explore in this exploratory data analysis.  
 
-Disclaimer : This EDA is written as a "study note" upon assumption that the reader is a beginner in R just like this author. Thus several basic topic such as dataframe is mentioned elaborately. - Naphat   
+>Disclaimer : This EDA is written as a "study note" upon assumption that the reader is a beginner in R just like this author. Thus several basic topic such as dataframe is mentioned elaborately. - Naphat   
 
 ## Titanic Dataset Overview
 
@@ -206,13 +206,13 @@ show by its numerical presentation.
 
 This section inspires a further analysis to find potential predictor for survival :
 
-1. Correlation between age-survival.
+1. Relationship between age-survival.
 
-2. Correlation between Parch-SibSp-survival
+2. Relationship between Parch-SibSp-survival
 
 , which will be explored through graphical method in later section.
 
-## Qualitative
+## Qualitative Attributes
 
 Before we investigate correlation between quantitative variables and survival of passenger further, let's 
 take a good look at our **qualitative variables**.
@@ -287,12 +287,6 @@ Pie chart is the optimal way to illustrate proportion of data within the same va
 
 Represented in pie chart, the binary value of survival and gender of the passenger are distributed in a very similar proportion. This inspire us to find relationship between Survived-Sex. 
 
-There are also other relationships worth investigating. Embarkation port relates to the hometown of
-the passenger. Survived-Embarked relationship could contain the effect of different nationality/hereditary. The effect is not necessary a genetic advantage/disadvantage. It also include 
-the accessibility to the rescue during emergency, that might differ based on different nationality.
-The relationship between Pclass-Embarked-Survived is also an important relationship that could support this argument.
-
-The another one is Survived-Sex. In practical, gender of the passenger affect survival tremendously, considering that female is prioritized to be rescued first.
 
 
 ![piechart]()
@@ -301,21 +295,88 @@ The another one is Survived-Sex. In practical, gender of the passenger affect su
 
 In this section, we dissect our data further to accomplish the objective of exploratory data analysis.
 We start looking for correlation between each variable and **Survived** (Survival state). 
-Our expectation is the potential survival predictor for survival. The finding from this section could 
+Our objection is the potential survival predictor for survival. The finding from this section could 
 be used to reasonably select an attribute in machine learning, or even feature engineering.
 
 Recall that there are some inspiration from prior section that now we will jump right in
 
-### 1. Correlation between Age-Survived.
+### 1. Relationship between Age-Survived.
 
-### 2. Correlation between Parch-SibSp-Survived
+Investigating Age-Survived means that we are looking for connection between these two variable.
+Some age might have more survivor. To visualize, we could use grouped boxplot. We can boxplot the age of those who survive the disaster, compared with those who did not.
 
-### 3. Correlation between Embarked-Survived
+The command for grouped boxplot are
+```
+boxplot(df.raw$Age ~ df.raw$Survived,
+        main =  "Age Boxplot Comparison between Survivor and Non-survivor  ",
+        col = "orange",
+        border = "brown",
+        horizontal = TRUE,
+        )
 
-### 3. Correlation between Pclass-Embarked-Survived
+```
 
-### 3. Correlation between Sex-Survived
+The output looks like this
 
+![ageboxsur]()
+
+From the grouped boxplot, age does not show a high potential relationship. 
+Good predictor should have a distinct difference among two groups.
+In this case, mean of survivor age and non-survivor is almost identical.
+
+However let's not jump to conclusion and observe histogram of Age-Survived
+
+```
+
+ggplot(df.raw, aes(x=Age, fill=factor(Survived))) +
+  geom_histogram(bins=30)+
+  ggtitle("Age vs Survived")+
+  scale_fill_discrete(name="Survived")
+  
+```
+![agesurhist]()
+
+On the contrary, this histogram show useful information for prediction.
+
+![hist]()
+
+### 2. Relationship between Parch-SibSp-Survived
+
+For three categorical variables relationship, let's use scatter plot by group.
+
+```
+#Parch SibSp Sur
+# Scatter plot
+Parch <- df.raw$Parch
+SibSp <- df.raw$SibSp
+z <- df.raw$Survived
+plot(Parch, SibSp,
+     pch = 19,
+     col = factor(z),
+     main = "Scatter plot by group of Survivor state")
+
+# Legend
+legend("topleft",
+       legend = levels(factor(z)),
+       pch = 19,
+       col = factor(levels(factor(z)))) 
+```
+
+The Scatter plot by group looks like this
+
+![scatter]()
+
+
+
+### 3. Relationship between Sex-Survived
+
+We'll choose percentage barplot to compare gender of survivor and non-survivor. The command lines are as followed.
+
+```
+
+ggplot(data=df.raw,aes(Sex, fill = factor(Survived)))+geom_bar(stat = "count", position = "fill") +xlab("Sex") + scale_fill_discrete(name = "Survival Percentage")+ylab("Passenger") + ggtitle("Proportion of Survivor Gender")+scale_y_continuous(labels = function(x) paste0(x*100, "%"))+scale_fill_brewer()
+
+```
 
 
 
