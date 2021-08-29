@@ -254,13 +254,36 @@ The output looks like this
 
 Initial observation by this numerical presentation tell us that :
 
-1. Only 38.38% of 891 passengers survived from the incident.
+1. Only 38.38% of 891 passengers survived from the incident, considered as about one third of all 891 passengers.
 2. The majority of passenger held third-class ticket (55.11%). 
 3. Male passenger (65.34%) are almost twice of female passenger (35.24%).
 4. Most of the passenger embark on the ship at Southampton (72.28%), followed by Cherbourg (18.86%) and Queenstown (8.64%). Embarkation of two passenger is unknown
 
-This information could be more useful with another kind of visualization.
+This information could be more useful with more visual presentation.
 
+```
+# Create data for the graph.
+s <- c(342,549 )
+labels <- c("Survived (38.38%)", "Not Survived (61.62%)")
+# Plot the chart.
+pie(x,labels,radius = 1.5,main = "Survival state of 891 passengers")
+
+p <- c(216,184,491)
+labels <- c("First-class (24.24%)", "Second-class (20.65%)","Third-class (55.11%)")
+pie(p,labels,radius = 1.5,main = "Ticket Class of 891 passengers")
+
+# sex pie plot
+se <- c(314,577 )
+labels <- c("Female (35.24%)", "Male (64.76%)")
+pie(se,labels,radius = 1.5,main = "Gender of 891 passengers")
+
+e <- c(2,168,77,549 )
+labels <- c("Unknown (0.22%)", "Cherbourg (18.86%)"," Queenstown (8.64%)","Southampton (72.28%)")
+pie(e,labels,radius=1.5,main = "Embarkation port of 891 passengers")
+```
+
+We utilize pie() to create pie chart for each categorical variable.
+Pie chart is the optimal way to illustrate proportion of data within the same variables across the sample. The output looks like this.
 
 
 ## Skew 
