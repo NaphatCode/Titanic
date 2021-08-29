@@ -53,6 +53,20 @@ To elaborate, the training data contains 891 passengers.
   11. **Cabin** is the **cabin number** assigned to the passenger on the Titanic. 
 
   12. **Embarked** is the **embarkation port** of the passenger consisting of three locations, which are Cherbourg, Queenstown and Southampton.
+  
+  We can reaffirm the dimension (the size) of our dataframe by
+following command
+
+```
+
+nrow(df.raw)
+ncol(df.row)
+dim(df.row)
+length(df.row)
+
+```
+
+The output will look like this 
 
 ## Quantitative Attribute
 Now that we could recognize our variable, let's make a firm handshake with them. 
@@ -62,8 +76,8 @@ We start by importing our training data, and then kindly ask Rstudio to summariz
 
 ```
 
-              df.raw = read.csv("~/development/Titanic/data/train.csv")
-              summary(df.raw)
+df.raw = read.csv("~/development/Titanic/data/train.csv")
+summary(df.raw)
 
 ```
 
@@ -77,11 +91,31 @@ I named this dataframe as df.raw, which later on we will call this object by thi
 <img width="400" alt="summary"  src="https://user-images.githubusercontent.com/65748521/131241040-9d0219e0-e509-4e9b-a309-c4993a5e2e39.png">
 </p>
 
-We can reaffirm the dimension (the size) of our dataframe by
-following command
+These summary is useful but not in the most organized format for presentation. 
+tbl_summary(df.raw) command from **library gtsummary** 
+can summarize the result in a beautiful grid.
 
-nrow(df.raw)
+We need to install package by this command in the console first.
 
+```
+install.packages("gtsummary")
+```
+After a few second the packages should be automatically downloaded and successfully installed.
+
+Next step is intializing the library 
+We call for first six rows of df.raw by command head().    
+
+```
+
+library(gtsummary)
+head(df.raw)
+
+```
+
+This output is a quick display in case we need to peek back into our dataframe.
+From this output, together with the overview of each variable definition, only some variables are **quantitative**.
+In other word, they are numbers that can be calculate statistically without losing real-world meaning.
+The four quantitative variables in Titanic dataset are **Age**,**Sibsp**,**Parch**,**Fare**
 
 ## Qualitative
 ##Skew 
