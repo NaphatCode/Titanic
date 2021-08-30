@@ -286,15 +286,13 @@ pie(e,labels,radius=1.5,main = "Embarkation port of 891 passengers")
 We utilize pie() to create pie chart for each categorical variable.
 Pie chart is the optimal way to illustrate proportion of data within the same variables across the sample. Another perk of pie() is that the parameter is very straightforward. The output looks like this.
 
-Represented in pie chart, the binary value of survival and gender of the passenger are distributed in a very similar proportion. This inspire us to find relationship between Survived-Sex. 
-
-
-
 ![surpie](https://user-images.githubusercontent.com/65748521/131267198-88332a67-667d-46fb-9413-fcc876a30c72.png)
 
 ![empie](https://user-images.githubusercontent.com/65748521/131267209-4ae5ccc0-9369-4fbe-97aa-d34153c66a39.png)
 ![sexpie](https://user-images.githubusercontent.com/65748521/131267218-1d0becb9-2599-42c1-ba1b-2dc33adb19ea.png)
 ![pclasspie](https://user-images.githubusercontent.com/65748521/131267221-67723937-b707-4d90-8a37-8e548132b505.png)
+
+Represented in pie chart, the binary value of survival and gender of the passenger are distributed in a very similar proportion. This inspire us to find relationship between Survived-Sex. 
 
 
 ## Analysis for Potential Predictor
@@ -343,13 +341,23 @@ ggplot(df.raw, aes(x=Age, fill=factor(Survived))) +
 ```
 ![agesurhist](https://user-images.githubusercontent.com/65748521/131267249-d70fe1ed-8431-4ae3-906f-c0dac84f5723.png)
 
-On the contrary, this histogram show useful information for prediction.
+On the contrary, this histogram show useful information for prediction. It is evident now that different age has a vary count of survivor.
 
+Age 15-20 and 50-60 has a low survivor frequency. Age 25 and 30 shows a peak in the histogram. This observation hints us that we could use age to initially seperate survivor from non-survivor. Generally speaking, age could be assigned as the very first criteria 
+by decision tree algorithm because the passenger at age 25 and 30 have more probability to survive. 
+
+However, as we show in the boxplot, age alone can not distinctly identify the survivor.
+The mean age of both survivor and non-survivor are almost identical. But this variable
+will still be one of the useful to work with.
 
 
 ### 2. Relationship between Parch-SibSp-Survived
 
 For three categorical variables relationship, let's use scatter plot by group.
+Scatter plot by group shows our data in two dimensional space, and display 
+third categorical variable by color. This kind of plot is useful to determine the
+three-way relationship. The graphical presentation is designed illustrate how each class of datagather and scatter around certain combination of two variables.
+The command lines are
 
 ```
 #Parch SibSp Sur
@@ -373,7 +381,7 @@ The Scatter plot by group looks like this
 
 ![scat sib par](https://user-images.githubusercontent.com/65748521/131267280-9ce2eb2d-a727-4b2c-962b-3e9d0286f064.png)
 
-
+The survivor is highlighted with red dot, amplified by color, while the non-survivor are painted black. 
 
 
 ### 3. Relationship between Sex-Survived
