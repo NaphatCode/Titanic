@@ -382,19 +382,79 @@ The Scatter plot by group looks like this
 ![scat sib par](https://user-images.githubusercontent.com/65748521/131267280-9ce2eb2d-a727-4b2c-962b-3e9d0286f064.png)
 
 The survivor is highlighted with red dot, amplified by color, while the non-survivor are painted black. 
+The simplicity of this graphical presentation is outstanding, but it introduce us
+to many useful information for prediction.
+In fact, it is one of my personal preference to work simple tool since it enable me and 
+reader to understand easily.
+
+- Focus along Parch axis, it make sense that if the passenger have guardian boarding together, between 1-3, there are chance thet they will be protected by their parents.
+- However, when Parch exceed 3, no survivor is reported. This could be assumed that the family aboarding Titanic include both children and the elder. Thus, they were likely to
+evacuate slower due to large family size. 
+- Now moved to SibSp axis, the passengers with 1-2 sibling/spouse are more likely to survive. This finding is interpreted as real-world situation as an act of rescue by their
+lover and brother/sister.
+
+For machine learning, there might be more underlining detail. But from what we got here so far, If Parch=3 , then the passenger will survive. This could be the benefit of having 
+adequate company to assist each other : Father, Mother, Child.
 
 
-### 3. Relationship between Sex-Survived
+### 3. Relationship between Sex-Survived and Age-sex-survived 
 
-We'll choose percentage barplot to compare gender of survivor and non-survivor. The command lines are as followed.
+We'll use percentage barplot and histogram to compare gender of survivor and non-survivor.
+We have our lesson from age-survived that we can't always rely on one way of graphical epresentation. Box plot is not used because both Sex and Survived are binary categorical variables.The command lines for percentage barplot are as followed.
 
 ```
 
 ggplot(data=df.raw,aes(Sex, fill = factor(Survived)))+geom_bar(stat = "count", position = "fill") +xlab("Sex") + scale_fill_discrete(name = "Survival Percentage")+ylab("Passenger") + ggtitle("Proportion of Survivor Gender")+scale_y_continuous(labels = function(x) paste0(x*100, "%"))+scale_fill_brewer()
 
 ```
+The output looks like this
 
 ![gendersur](https://user-images.githubusercontent.com/65748521/131267301-c2c3e75f-42cd-4198-82d0-4571827cba78.png)
+
+Starting by this bar graph, it is evident that female survivor are 4 times of the male survivor. Thus this variable/attribute would be a potential predictor for survival.
+Recall from earlier that age is an another potential predictor. 
+
+Let's plot another histogram to see this two potential predictor work together in action.
+Use these command lines to generate comparing histogram.
+
+```
+
+ggplot(df.raw, aes(x=Age, fill=factor(Survived))) +
+  geom_histogram(bins=30)+
+  facet_grid(.~Sex)+
+  ggtitle("Age vs Survived")+
+  scale_fill_discrete(name="Survived")
+  
+```
+>facet_grid(.~Sex) 
+
+facet_grid(.~Sex) tell R to seperate data by Sex, into two histogram
+
+>aes(x=Age, fill=factor(Survived)
+
+aes(x=Age, fill=factor(Survived) tell R to create two intersected histogram inside each gender graph.
+
+The output looks like this
+
 ![age sur hist](https://user-images.githubusercontent.com/65748521/131267306-c6cd2a34-49ba-4ec9-93b6-61416e984b6b.png)
 
+These graph provide us deeper clue on how to utilize our predictor.
 
+- It was already evident earlier that men are less likely to survive. Then what could be
+a criteria that men would survive? It is shown in right histogram male children (Age 0-5), who are the rescue priority and young male adult, who should be strong enough to help themselves, are most likely to survive among the male passenger.
+- Woman at 20 at 30 are even more likely to survive. 
+
+This information could be use further in machine learing, engineering these two attributes
+together for precise prediction
+
+## Summary
+
+In this EDA, our primary goal is to get to know our precious data better. Just like most of the data out there, these numbers are special because they reflect the history, the decision and the untold story of event in the past on the Titanic.
+
+We learn that Age and Sex are potential predictor together, becuase it reflect the priority of rescue on Titanic. The high survival rate
+of certain combination of Parch and SibSp reflect a power of family. 
+
+It's been a great voyage in this article, and I hope we could explore more data together again
+
+
+Check out the code in this link https://github.com/NaphatCode/Titanic
